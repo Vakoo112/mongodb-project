@@ -5,6 +5,8 @@
 package com.example.mongodbexample.entity;
 
 import java.util.List;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -20,7 +22,10 @@ public class Student {
 
     @Id
     private String id;
+    @NotBlank
     private String name;
+    @NotBlank
+    @Email
     @Field(name = "mail")
     private String email;
     @DBRef
